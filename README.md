@@ -20,17 +20,17 @@ Here's the template:
 -------------------------------------------------------------------------------
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
-[your text here]
+Cybertrust Japan Co., Ltd.  
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-[your text here]
+MIRACLE LINUX 9  
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-[your text here]
+We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.  
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -40,26 +40,36 @@ An authorized reviewer will initiate contact verification by sending each securi
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
 
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key fingerprint:
+- Name: Haruki TSURUMOTO  
+- Position: Senior Engineer  
+- Email address: haruki.tsurumoto@miraclelinux.com  
+- PGP key fingerprint: D65234EEE8B6B283  
+- PGP key: https://raw.githubusercontent.com/miraclelinux/shim-review/miraclelinux-shim-x64-20220715/haruki_tsurumoto_D65234EEE8B6B283.pub  
 
-(Key should be signed by the other security contacts, pushed to a keyserver
-like keyserver.ubuntu.com, and preferably have signatures that are reasonably
-well known in the Linux community.)
+```
+$ gpg --fingerprint D65234EEE8B6B283
+pub   rsa2048 2017-06-16 [SC]
+      FEA2 980F F1B1 FA08 4A8D  FD4E D652 34EE E8B6 B283
+uid           [ultimate] Haruki TSURUMOTO <haruki.tsurumoto@miraclelinux.com>
+sub   rsa2048 2017-06-16 [E]
+```
 
 -------------------------------------------------------------------------------
 ### Who is the secondary contact for security updates, etc.?
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key fingerprint:
+- Name: Souta KAWAHARA  
+- Position: Senior Enginner  
+- Email address: souta.kawahara@miraclelinux.com  
+- PGP key fingerprint: 3571733B754329BC  
+- PGP key: https://raw.githubusercontent.com/miraclelinux/shim-review/miraclelinux-shim-x64-20220715/souta_kawahara_3571733B754329BC.pub  
 
-(Key should be signed by the other security contacts, pushed to a keyserver
-like keyserver.ubuntu.com, and preferably have signatures that are reasonably
-well known in the Linux community.)
+```
+$ gpg --fingerprint 3571733B754329BC
+pub   rsa4096 2022-06-21 [SC] [expires: 2027-06-20]
+      F023 FF25 7C41 4A97 04D8  D347 3571 733B 7543 29BC
+uid           [ultimate] Souta KAWAHARA <souta.kawahara@miraclelinux.com>
+sub   rsa4096 2022-06-21 [E] [expires: 2027-06-20]
+```
 
 -------------------------------------------------------------------------------
 ### Were these binaries created from the 15.6 shim release tar?
@@ -68,22 +78,24 @@ Please create your shim binaries starting with the 15.6 shim release tar file: h
 This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the appropriate gnu-efi source.
 
 -------------------------------------------------------------------------------
-[your text here]
+Created from shim-15.6 release.  
+No added patches.  
 
 -------------------------------------------------------------------------------
 ### URL for a repo that contains the exact code which was built to get this binary:
 -------------------------------------------------------------------------------
-[your url here]
+Our build environment is only available from inner.  
 
 -------------------------------------------------------------------------------
 ### What patches are being applied and why:
 -------------------------------------------------------------------------------
-[your text here]
+No patches are applied.  
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader what exact implementation of Secureboot in GRUB2 do you have? (Either Upstream GRUB2 shim_lock verifier or Downstream RHEL/Fedora/Debian/Canonical-like implementation)
 -------------------------------------------------------------------------------
-[your text here]
+Yes, it have.  
+Downstream RHEL-like implementation.  
 
 -------------------------------------------------------------------------------
 ### If shim is loading GRUB2 bootloader and your previously released shim booted a version of grub affected by any of the CVEs in the July 2020 grub2 CVE list, the March 2021 grub2 CVE list, or the June 7th 2022 grub2 CVE list:
@@ -114,7 +126,9 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-[your text here]
+We have no signed old shims,  
+and we will not ships GRUB2 with these CVEs at all.  
+
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
@@ -123,96 +137,142 @@ This matches https://github.com/rhboot/shim/releases/tag/15.6 and contains the a
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-[your text here]
+1957a85b0032a81e6482ca4aab883643b8dae06e: Yes  
+75b0cea7bf307f362057cc778efe89af4c615354: Yes  
+eadb2f47a3ced5c64b23b90fd2a3463f63726066: No  
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
-[your text here]
+We don't use this functionality at present.  
 
 -------------------------------------------------------------------------------
 ### If you are re-using a previously used (CA) certificate, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs to vendor_dbx in shim in order to prevent GRUB2 from being able to chainload those older GRUB2 binaries. If you are changing to a new (CA) certificate, this does not apply.
 ### Please describe your strategy.
 -------------------------------------------------------------------------------
-[your text here]
+Not applied.  
 
 -------------------------------------------------------------------------------
 ### What OS and toolchain must we use to reproduce this build?  Include where to find it, etc.  We're going to try to reproduce your build as closely as possible to verify that it's really a build of the source tree you tell us it is, so these need to be fairly thorough. At the very least include the specific versions of gcc, binutils, and gnu-efi which were used, and where to find those binaries.
 ### If the shim binaries can't be reproduced using the provided Dockerfile, please explain why that's the case and what the differences would be.
 -------------------------------------------------------------------------------
-[your text here]
+Use docker or podman.  
+```
+docker build --no-cache .
+```
+Versions:
+```
+gcc: 11.2.1
+binutils: 2.35.2
+gnu-efi: 3.0.11
+```
 
 -------------------------------------------------------------------------------
 ### Which files in this repo are the logs for your build?
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-[your text here]
+build.log and root.log are available.  
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
-[your text here]
+Not applied.  
 
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-[your text here]
+
+eff340b0165a2bddf95ffa387bc71aea3bcee4102a2dc081a53f0dcbb3dd7152  shimx64.efi  
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-[your text here]
+Our private key is stored in HSM(Yubikey), this will be only available while speicific package build.(e.g. shim, grub2, kernel, fwupd)  
 
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
 -------------------------------------------------------------------------------
-[your text here]
+No.  
 
 -------------------------------------------------------------------------------
 ### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-[your text here]
+We are planning below entries:  
+shim  
+```
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.miracle,1,Cybertrust Japan,shim,15.6,ml-packager@miraclelinux.com
+```
+
+grub2  
+```
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/
+grub.rh,2,Red Hat,grub2,2.06-27.el9.7.ML.1,mailto:secalert@redhat.com
+grub.miracle,2,Cybertrust Japan,grub2,2.06-27.el9.7.ML.1,mailto:ml-packager@miraclelinux.com
+
+```
+
+fwupd  
+```
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd-efi,1,Firmware update daemon,fwupd-efi,1.1,https://github.com/fwupd/fwupd
+fwupd-efi.miracle,1,MIRACLE LINUX,fwupd,1.7.4,mail:ml-packager@miraclelinux.com
+```
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
 -------------------------------------------------------------------------------
-[your text here]
+```
+all_video boot blscfg btrfs
+cat configfile cryptodisk echo ext2 f2fs fat font
+gcry_rijndael gcry_rsa gcry_serpent gcry_sha256 
+gcry_twofish gcry_whirlpool gfxmenu gfxterm gzio
+halt hfsplus http increment iso9660 jpeg loadenv
+loopback linux lvm luks luks2 mdraid09 mdraid1x
+minicmd net normal part_apple part_msdos part_gpt
+password_pbkdf2 pgp png reboot regexp search 
+search_fs_uuid search_fs_file search_label serial
+sleep syslinuxcfg test tftp version video xfs zstd
+```
 
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-[your text here]
+grub2-2.06-27.el9_0  
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-[your text here]
+fwupd  
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-[your text here]
+Not applied.  
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
 -------------------------------------------------------------------------------
-[your text here]
+By 'Secure Boot' ways.  
+shim, grub2, kernel and fwupd will prevent unauthenticated code in Secure Boot enabled environment.  
 
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
 -------------------------------------------------------------------------------
-[your text here]
+No.  
 
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 -------------------------------------------------------------------------------
-[your text here]
+5.14 based linux kernel that supports Secure Boot.  
 
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.
 -------------------------------------------------------------------------------
-[your text here]
+None.  
