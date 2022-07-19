@@ -244,7 +244,7 @@ sleep syslinuxcfg test tftp version video xfs zstd
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-grub2-2.06-27.el9_0  
+origin full version number is: grub2-2.06-27.el9_0.7  
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
