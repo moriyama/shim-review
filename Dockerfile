@@ -15,6 +15,7 @@ COPY sbat.ml.csv /root/rpmbuild/SOURCES/
 COPY shim-find-debuginfo.sh /root/rpmbuild/SOURCES/
 COPY dbx.esl /root/rpmbuild/SOURCES/
 COPY shim.patches /root/rpmbuild/SOURCES/
+RUN sed -i 's/linux32 -B/linux32/g' /root/rpmbuild/SPECS/shim-unsigned-x64.spec
 RUN rpmbuild -ba /root/rpmbuild/SPECS/shim-unsigned-x64.spec --noclean --define 'dist .el8'
 RUN rpm2cpio /root/rpmbuild/RPMS/x86_64/shim-unsigned-ia32-*.x86_64.rpm | cpio -diu
 RUN rpm2cpio /root/rpmbuild/RPMS/x86_64/shim-unsigned-x64-*.x86_64.rpm | cpio -diu
