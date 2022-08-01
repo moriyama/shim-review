@@ -205,7 +205,8 @@ Not applied.
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
 -------------------------------------------------------------------------------
-[your text here]
+By 'Secure Boot' ways.
+shim, grub2, kernel and fwupd will prevent unauthenticated code in Secure Boot enabled environment.
 
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
