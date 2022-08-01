@@ -200,7 +200,7 @@ fwupd
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
 -------------------------------------------------------------------------------
-[your text here]
+Not applied.
 
 -------------------------------------------------------------------------------
 ### How do the launched components prevent execution of unauthenticated code?
