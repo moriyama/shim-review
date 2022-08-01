@@ -195,7 +195,7 @@ No.
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
 -------------------------------------------------------------------------------
-[your text here]
+fwupd
 
 -------------------------------------------------------------------------------
 ### If your GRUB2 launches any other binaries that are not the Linux kernel in SecureBoot mode, please provide further details on what is launched and how it enforces Secureboot lockdown.
