@@ -164,7 +164,7 @@ gnu-efi: 3.0.8
 This should include logs for creating the buildroots, applying patches, doing the build, creating the archives, etc.
 
 -------------------------------------------------------------------------------
-[your text here]
+build.log and root.log are available.
 
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
