@@ -173,7 +173,7 @@ Our private key is stored in HSM(Yubikey), this will be only available while spe
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
 -------------------------------------------------------------------------------
-[your text here]
+No.
 
 -------------------------------------------------------------------------------
 ### Do you add a vendor-specific SBAT entry to the SBAT section in each binary that supports SBAT metadata ( grub2, fwupd, fwupdate, shim + all child shim binaries )?
