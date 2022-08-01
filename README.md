@@ -211,7 +211,7 @@ shim, grub2, kernel and fwupd will prevent unauthenticated code in Secure Boot e
 -------------------------------------------------------------------------------
 ### Does your SHIM load any loaders that support loading unsigned kernels (e.g. GRUB)?
 -------------------------------------------------------------------------------
-[your text here]
+No.
 
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
