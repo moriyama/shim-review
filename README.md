@@ -125,7 +125,11 @@ Downstream RHEL-like implementation.
 ### Is upstream commit [eadb2f47a3ced5c64b23b90fd2a3463f63726066 "lockdown: also lock down previous kgdb use"](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=eadb2f47a3ced5c64b23b90fd2a3463f63726066) applied?
 
 -------------------------------------------------------------------------------
-[your text here]
+```
+1957a85b0032a81e6482ca4aab883643b8dae06e: Yes
+75b0cea7bf307f362057cc778efe89af4c615354: Yes
+eadb2f47a3ced5c64b23b90fd2a3463f63726066: No
+```
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
