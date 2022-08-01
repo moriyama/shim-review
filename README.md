@@ -52,10 +52,10 @@ well known in the Linux community.)
 -------------------------------------------------------------------------------
 ### Who is the secondary contact for security updates, etc.?
 -------------------------------------------------------------------------------
-- Name:
-- Position:
-- Email address:
-- PGP key fingerprint:
+- Name: Yuki HOSHINO
+- Position: Principal Engineer
+- Email address: yuki.hoshino@miraclelinux.com
+- PGP key fingerprint: `EE67 AEA5 A962 2B47 B469  5C27 AEC5 7E02 7A2A FEA6` ( [yuki_hoshino_AEC57E027A2AFEA6.pub](yuki_hoshino_AEC57E027A2AFEA6.pub) )
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
