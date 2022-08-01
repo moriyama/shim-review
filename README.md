@@ -20,7 +20,7 @@ Here's the template:
 -------------------------------------------------------------------------------
 ### What organization or people are asking to have this signed?
 -------------------------------------------------------------------------------
-[your text here]
+Cybertrust Japan Co., Ltd.
 
 -------------------------------------------------------------------------------
 ### What product or service is this for?
