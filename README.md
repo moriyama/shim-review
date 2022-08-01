@@ -155,7 +155,7 @@ This should include logs for creating the buildroots, applying patches, doing th
 -------------------------------------------------------------------------------
 ### What changes were made since your SHIM was last signed?
 -------------------------------------------------------------------------------
-[your text here]
+Not applied.
 
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
