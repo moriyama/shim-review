@@ -25,7 +25,7 @@ Cybertrust Japan Co., Ltd.
 -------------------------------------------------------------------------------
 ### What product or service is this for?
 -------------------------------------------------------------------------------
-[your text here]
+MIRACLE LINUX 8
 
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
