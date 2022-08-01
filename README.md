@@ -30,7 +30,7 @@ MIRACLE LINUX 8
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-[your text here]
+We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
