@@ -168,7 +168,7 @@ Not applied.
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
 -------------------------------------------------------------------------------
-[your text here]
+Our private key is stored in HSM(Yubikey), this will be only available while speicific package build. (e.g. shim, grub2, kernel, fwupd)
 
 -------------------------------------------------------------------------------
 ### Do you use EV certificates as embedded certificates in the SHIM?
