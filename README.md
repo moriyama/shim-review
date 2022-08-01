@@ -160,7 +160,10 @@ Not applied.
 -------------------------------------------------------------------------------
 ### What is the SHA256 hash of your final SHIM binary?
 -------------------------------------------------------------------------------
-[your text here]
+```
+8b091c13daecd709c0d63d6195afa51a97e17259a219d140b67789b299fb4b3e  shimia32.efi
+28d103d158eff69bc318ef41f78a7714a7cdc43c6ab0d860e7191fdc3e7b8640  shimx64.efi
+```
 
 -------------------------------------------------------------------------------
 ### How do you manage and protect the keys used in your SHIM?
