@@ -204,7 +204,7 @@ No.
 -------------------------------------------------------------------------------
 ### What is the origin and full version number of your bootloader (GRUB or other)?
 -------------------------------------------------------------------------------
-[your text here]
+origin full version number is: `2.02-123.el8.8.ML.1`
 
 -------------------------------------------------------------------------------
 ### If your SHIM launches any other components, please provide further details on what is launched.
