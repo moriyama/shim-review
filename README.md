@@ -116,7 +116,8 @@ Downstream RHEL-like implementation.
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-[your text here]
+We have't have signed old shims.  
+No, our new chain of trust allows booting `grub2-2.02-123.el8.ML.1` with `CVE-2021-3695`, `CVE-2021-3696`, `CVE-2021-3697`, `CVE-2022-28733`, `CVE-2022-28734`, `CVE-2022-28735` and `CVE-2022-28736`.
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
