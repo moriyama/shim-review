@@ -194,7 +194,27 @@ No.
 ### Please provide exact SBAT entries for all SBAT binaries you are booting or planning to boot directly through shim.
 ### Where your code is only slightly modified from an upstream vendor's, please also preserve their SBAT entries to simplify revocation.
 -------------------------------------------------------------------------------
-[your text here]
+shim
+```
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+shim,2,UEFI shim,shim,1,https://github.com/rhboot/shim
+shim.miracle,1,Cybertrust Japan,shim,15.6-1.el8.ML.1,ml-packager@miraclelinux.com
+
+```
+grub2
+```
+sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+grub,2,Free Software Foundation,grub,2.02,https//www.gnu.org/software/grub/
+grub.rh,2,Red Hat,grub2,2.02-123.el8_6.8,mailto:secalert@redhat.com
+grub.miracle8,2,Cybertrust Japan,grub2,2.02-123.el8.8.ML.1,mailto:ml-packager@miraclelinux.com
+```
+
+fwupd
+```
+sbat,1,UEFI shim,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
+fwupd-efi,1,Firmware update daemon,fwupd-efi,1.1,https://github.com/fwupd/fwupd
+fwupd-efi.miracle,1,MIRACLE LINUX,fwupd,1.7.4,mail:ml-packager@miraclelinux.com
+```
 
 -------------------------------------------------------------------------------
 ### Which modules are built into your signed grub image?
