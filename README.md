@@ -116,8 +116,8 @@ Downstream RHEL-like implementation.
 ### Were old shims hashes provided to Microsoft for verification and to be added to future DBX updates?
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
-We have't have signed old shims.  
-Yes, our new chain of trust disallow booting them.
+We don't have signed old shims.  
+And, our new chain of trust disallows booting old vulnerable grub.
 Because our old GRUB2 builds have 1 as `component_generation` on SBAT.
 
 -------------------------------------------------------------------------------
