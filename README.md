@@ -117,7 +117,8 @@ Downstream RHEL-like implementation.
 ### Does your new chain of trust disallow booting old GRUB2 builds affected by the CVEs?
 -------------------------------------------------------------------------------
 We have't have signed old shims.  
-No, our new chain of trust allows booting `grub2-2.02-123.el8.ML.1` with `CVE-2021-3695`, `CVE-2021-3696`, `CVE-2021-3697`, `CVE-2022-28733`, `CVE-2022-28734`, `CVE-2022-28735` and `CVE-2022-28736`.
+Yes, our new chain of trust disallow booting them.
+Because our old GRUB2 builds have 1 as `component_generation` on SBAT.
 
 -------------------------------------------------------------------------------
 ### If your boot chain of trust includes a Linux kernel:
