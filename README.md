@@ -40,10 +40,10 @@ An authorized reviewer will initiate contact verification by sending each securi
 You will be asked to post the contents of these mails in your `shim-review` issue to prove ownership of the email addresses and PGP keys.
 
 -------------------------------------------------------------------------------
-- Name: Souta KAWAHARA
+- Name: Haruki TSURUMOTO
 - Position: Senior Engineer
-- Email address: souta.kawahara@miraclelinux.com
-- PGP key fingerprint: `F023 FF25 7C41 4A97 04D8  D347 3571 733B 7543 29BC` ( [souta_kawahara_3571733B754329BC.pub](souta_kawahara_3571733B754329BC.pub) )
+- Email address: haruki.tsurumoto@miraclelinux.com
+- PGP key fingerprint: `FEA2 980F F1B1 FA08 4A8D  FD4E D652 34EE E8B6 B283` ( [haruki_tsurumoto_D65234EEE8B6B283.pub](haruki_tsurumoto_D65234EEE8B6B283.pub) )
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
