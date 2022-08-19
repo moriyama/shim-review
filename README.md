@@ -213,9 +213,8 @@ grub2
 ```
 sbat,1,SBAT Version,sbat,1,https://github.com/rhboot/shim/blob/main/SBAT.md
 grub,2,Free Software Foundation,grub,2.06,https//www.gnu.org/software/grub/
-grub.rh,2,Red Hat,grub2,2.06-27.el9.7.ML.1,mailto:secalert@redhat.com
-grub.miracle,2,Cybertrust Japan,grub2,2.06-27.el9.7.ML.1,mailto:ml-packager@miraclelinux.com
-
+grub.rh,2,Red Hat,grub2,2.06-27.el9.7.ML.2,mailto:secalert@redhat.com
+grub.miracle,1,Cybertrust Japan,grub2,2.06-27.el9.7.ML.2,mailto:ml-packager@miraclelinux.com
 ```
 
 fwupd  

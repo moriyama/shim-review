@@ -1,4 +1,4 @@
-%global mlrelease .ML.1
+%global mlrelease .ML.2
 # This package calls binutils components directly and would need to pass
 # in flags to enable the LTO plugins
 # Disable LTO
@@ -524,6 +524,9 @@ mv ${EFI_HOME}/grub.cfg.stb ${EFI_HOME}/grub.cfg
 %endif
 
 %changelog
+* Thu Aug 18 2022 Haruki TSURUMOTO <haruki.tsurumoto@miraclelinux.com> - 2.06-27.el9.7.ML.2
+- Lower the sbat component_generation of grub.miracle
+
 * Mon Jun 20 2022 Haruki TSURUMOTO <haruki.tsurumoto@miraclelinux.com> - 2.06-27.el9.7.ML.1
 - Pointed sb_key to "ml9secureboot001"
 - Specify token and cert name of our Hardware Security Module.
