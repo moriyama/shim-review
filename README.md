@@ -30,8 +30,8 @@ MIRACLE LINUX 9
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.  
-
+We are building RHEL-derivative distribution as MIRACLE LINUX(ex-Asianux) in Japan for 20 years.  
+We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.   
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
 The security contacts need to be verified before the shim can be accepted. For subsequent requests, contact verification is only necessary if the security contacts or their PGP keys have changed since the last successful verification.
