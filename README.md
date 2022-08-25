@@ -32,6 +32,7 @@ MIRACLE LINUX 9
 -------------------------------------------------------------------------------
 We are building RHEL-derivative distribution as MIRACLE LINUX(ex-Asianux) in Japan for 20 years.  
 We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.   
+
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
 The security contacts need to be verified before the shim can be accepted. For subsequent requests, contact verification is only necessary if the security contacts or their PGP keys have changed since the last successful verification.
@@ -144,7 +145,8 @@ eadb2f47a3ced5c64b23b90fd2a3463f63726066: No
 -------------------------------------------------------------------------------
 ### Do you build your signed kernel with additional local patches? What do they do?
 -------------------------------------------------------------------------------
-[your text here]
+We add one debrand patch(replacing trademarks) for compliant RED HAT TRADEMARK GUIDELINES.
+It changes a few messages of `pr_notice()` and `pr_crit()` and source-code comments, do nothing else.  
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -274,7 +276,7 @@ No.
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 -------------------------------------------------------------------------------
-5.14 based linux kernel that supports Secure Boot.  
+We using 5.14 kernel based on RHEL9 kernel that supports Secure Boot.  
 
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.

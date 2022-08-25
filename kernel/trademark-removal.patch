@@ -1,0 +1,141 @@
+diff --git a/init/main.c b/init/main.c
+index 17bdb8e3c..fc16f0447 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -934,7 +934,6 @@ asmlinkage __visible void __init __no_sanitize_address start_kernel(void)
+ 	boot_cpu_init();
+ 	page_address_init();
+ 	pr_notice("%s", linux_banner);
+-	pr_notice("The list of certified hardware and cloud instances for Red Hat Enterprise Linux 9 can be viewed at the Red Hat Ecosystem Catalog, https://catalog.redhat.com.\n");
+ 	early_security_init();
+ 	setup_arch(&command_line);
+ 	setup_boot_config();
+diff --git a/kernel/rh_messages.c b/kernel/rh_messages.c
+index 345a979cd..47d28e90d 100644
+--- a/kernel/rh_messages.c
++++ b/kernel/rh_messages.c
+@@ -3,10 +3,10 @@
+ 
+ #define DEV_DESC_LEN 256
+ /*
+- * The following functions are used by Red Hat to indicate to users that
+- * hardware and drivers are unsupported, or have limited support in RHEL major
+- * and minor releases.  These functions output loud warning messages to the end
+- * user and should be USED WITH CAUTION.
++ * The following functions are used by MIRACLE LINUX to indicate to users that
++ * hardware and drivers are unsupported, or have limited support in MIRACLE
++ * LINUX major and minor releases.  These functions output loud warning
++ * messages to the end user and should be USED WITH CAUTION.
+  *
+  * Any use of these functions _MUST_ be documented in the RHEL Release Notes,
+  * and have approval of management.
+@@ -27,9 +27,9 @@
+  *
+  * Called to notify users that the device will no longer be tested on a routine
+  * basis and driver code associated with this device is no longer being updated.
+- * Red Hat may fix security-related and critical issues.  Support for this device
+- * will be disabled in a future major release and users deploying this device
+- * should plan to replace the device in production systems.
++ * MIRACLE LINUX may fix security-related and critical issues.  Support for
++ * this device will be disabled in a future major release and users deploying
++ * this device should plan to replace the device in production systems.
+  *
+  * This function should be used when the driver's usage can be tied to a
+  * specific hardware device.  For example, a network device driver loading on a
+@@ -53,7 +53,7 @@ EXPORT_SYMBOL(mark_hardware_unmaintained);
+  * @driver_name: driver name
+  *
+  * Called to notify users that a driver will no longer be tested on a routine
+- * basis and the driver code is no longer being updated.  Red Hat may fix
++ * basis and the driver code is no longer being updated. MIRACLE LINUX may fix
+  * security-related and critical issues.  Support for this driver will be
+  * disabled in a future major release, and users should replace any affected
+  * devices in production systems.
+@@ -153,8 +153,8 @@ EXPORT_SYMBOL(mark_hardware_disabled);
+  * kernel.  Calling this function indicates that the driver or subsystem has
+  * had limited testing and is not marked for full support within this RHEL
+  * minor release.  The next RHEL minor release may contain full support for
+- * this driver.  Red Hat does not guarantee that bugs reported against this
+- * driver or subsystem will be resolved.
++ * this driver. MIRACLE LINUX does not guarantee that bugs reported against
++ * this driver or subsystem will be resolved.
+  */
+ void mark_tech_preview(const char *msg, struct module *mod)
+ {
+diff --git a/kernel/rh_taint.c b/kernel/rh_taint.c
+index 95196f56a..fe791f833 100644
+--- a/kernel/rh_taint.c
++++ b/kernel/rh_taint.c
+@@ -2,7 +2,7 @@
+ #include <linux/module.h>
+ 
+ /*
+- * The following functions are used by Red Hat to indicate to users that
++ * The following functions are used by MIRACLE LINUX to indicate to users that
+  * hardware and drivers are unsupported, or have limited support in RHEL major
+  * and minor releases.  These functions output loud warning messages to the end
+  * user and should be USED WITH CAUTION.
+@@ -16,15 +16,15 @@
+  * @msg: Hardware name, class, or type
+  *
+  * Called to mark a device, class of devices, or types of devices as not having
+- * support in any RHEL minor release.  This does not TAINT the kernel.  Red Hat
+- * will not fix bugs against this hardware in this minor release.  Red Hat may
+- * declare support in a future major or minor update release.  This cannot be
+- * used to mark drivers unsupported.
++ * support in any RHEL minor release.  This does not TAINT the kernel. MIRACLE
++ * LINUX will not fix bugs against this hardware in this minor release.
++ * MIRACLE LINUX may declare support in a future major or minor update release.
++ * This cannot be used to mark drivers unsupported.
+  */
+ void mark_hardware_unsupported(const char *msg)
+ {
+ 	/* Print one single message */
+-	pr_crit("Warning: %s - this hardware has not undergone testing by Red Hat and might not be certified. Please consult https://catalog.redhat.com for certified hardware.\n", msg);
++	pr_crit("Warning: %s - this hardware has not undergone upstream testing. Please consult ml-packager@miraclelinux.com for more information.\n", msg);
+ }
+ EXPORT_SYMBOL(mark_hardware_unsupported);
+ 
+@@ -40,7 +40,7 @@ EXPORT_SYMBOL(mark_hardware_unsupported);
+  */
+ void mark_hardware_deprecated(const char *msg)
+ {
+-	pr_crit("Warning: %s - this hardware is not recommended for new deployments. It continues to be supported in this RHEL release, but it is likely to be removed in the next major release. Driver updates and fixes for this device will be limited to critical issues. Please contact Red Hat Support or your device's hardware vendor for additional information.\n", msg);
++	pr_crit("Warning: %s - this hardware is not recommended for new deployments. It continues to be supported in this MIRACLE LINUX release, but it is likely to be removed in the next major release. Driver updates and fixes for this device will be limited to critical issues. Please contact ml-packager@miraclelinux.com or your device's hardware vendor for additional information.\n", msg);
+ }
+ EXPORT_SYMBOL(mark_hardware_deprecated);
+ 
+@@ -52,7 +52,7 @@ EXPORT_SYMBOL(mark_hardware_deprecated);
+  * kernel.  Calling this function indicates that the driver or subsystem has
+  * had limited testing and is not marked for full support within this RHEL
+  * minor release.  The next RHEL minor release may contain full support for
+- * this driver.  Red Hat does not guarantee that bugs reported against this
++ * this driver.  MIRACLE LINUX does not guarantee that bugs reported against this
+  * driver or subsystem will be resolved.
+  */
+ void mark_tech_preview(const char *msg, struct module *mod)
+@@ -81,13 +81,13 @@ EXPORT_SYMBOL(mark_tech_preview);
+  * mark_driver_unsupported - drivers that we know we don't want to support
+  * @name: the name of the driver
+  *
+- * In some cases Red Hat has chosen to build a driver for internal QE
++ * In some cases MIRACLE LINUX has chosen to build a driver for internal QE
+  * use. Use this function to mark those drivers as unsupported for
+  * customers.
+  */
+ void mark_driver_unsupported(const char *name)
+ {
+-	pr_crit("Warning: %s - This driver has not undergone sufficient testing by Red Hat for this release and therefore cannot be used in production systems.\n",
++	pr_crit("Warning: %s - This driver has not undergone sufficient testing by MIRACLE LINUX for this release and therefore cannot be used in production systems.\n",
+ 	        name ? name : "kernel");
+ }
+ EXPORT_SYMBOL(mark_driver_unsupported);
+@@ -103,7 +103,7 @@ EXPORT_SYMBOL(mark_driver_unsupported);
+  */
+ void mark_driver_deprecated(const char *name)
+ {
+-	pr_crit("Warning: %s - this driver is not recommended for new deployments. It continues to be supported in this RHEL release, but it is likely to be removed in the next major release. Driver updates and fixes will be limited to critical issues. Please contact Red Hat Support for additional information.\n",
++	pr_crit("Warning: %s - this driver is not recommended for new deployments. It continues to be supported in this MIRACLE LINUX release, but it is likely to be removed in the next major release. Driver updates and fixes will be limited to critical issues. Please contact ml-packager@miraclelinux.com for additional information.\n",
+ 	        name ? name : "kernel");
+ }
+ EXPORT_SYMBOL(mark_driver_deprecated);
