@@ -19,3 +19,8 @@ Confirm the following are included in your repo, checking each box:
 ```
 eff340b0165a2bddf95ffa387bc71aea3bcee4102a2dc081a53f0dcbb3dd7152  shimx64.efi
 ```
+
+-------------------------------------------------------------------------------
+### What is the link to your previous shim review request (if any, otherwise N/A)?
+-------------------------------------------------------------------------------
+[your text here]
