@@ -134,6 +134,11 @@ eadb2f47a3ced5c64b23b90fd2a3463f63726066: No
 ```
 
 -------------------------------------------------------------------------------
+### Do you build your signed kernel with additional local patches? What do they do?
+-------------------------------------------------------------------------------
+[your text here]
+
+-------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 -------------------------------------------------------------------------------
