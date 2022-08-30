@@ -30,7 +30,8 @@ MIRACLE LINUX 8
 -------------------------------------------------------------------------------
 ### What's the justification that this really does need to be signed for the whole world to be able to boot it?
 -------------------------------------------------------------------------------
-We have received request from our customer that they wants to enable SecureBoot for OEM computer without indivisual signature from hardware vendor specially.
+We are building a RHEL-derivative distribution as MIRACLE LINUX(ex-Asianux) in Japan for 20 years.
+We have received a request from our customer that they want to enable SecureBoot for OEM computers without individual signature from hardware vendors specially.
 
 -------------------------------------------------------------------------------
 ### Who is the primary contact for security updates, etc.?
@@ -132,6 +133,12 @@ Because our old GRUB2 builds have 1 as `component_generation` on SBAT.
 75b0cea7bf307f362057cc778efe89af4c615354: Yes
 eadb2f47a3ced5c64b23b90fd2a3463f63726066: No
 ```
+
+-------------------------------------------------------------------------------
+### Do you build your signed kernel with additional local patches? What do they do?
+-------------------------------------------------------------------------------
+We add one debrand patch(replacing trademarks) for compliant RED HAT TRADEMARK GUIDELINES.
+It changes a few messages of `pr_notice()` and `pr_crit()`, do nothing else.
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
@@ -254,7 +261,7 @@ No.
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 -------------------------------------------------------------------------------
-4.18 based linux kernel that supports Secure Boot.
+We are using 4.18.0 kernel based on RHEL8 kernel that supports Secure Boot.
 
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.

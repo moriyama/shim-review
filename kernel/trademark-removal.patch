@@ -1,0 +1,25 @@
+diff --git a/arch/x86/kernel/setup.c b/arch/x86/kernel/setup.c
+index afdf13286..c568774ab 100644
+--- a/arch/x86/kernel/setup.c
++++ b/arch/x86/kernel/setup.c
+@@ -838,7 +838,7 @@ static void rh_check_supported(void)
+ 	if (((boot_cpu_data.x86_max_cores * smp_num_siblings) == 1) &&
+ 	    !guest && is_kdump_kernel()) {
+ 		pr_crit("Detected single cpu native boot.\n");
+-		pr_crit("Important:  In Red Hat Enterprise Linux 8, single threaded, single CPU 64-bit physical systems are unsupported by Red Hat. Please contact your Red Hat support representative for a list of certified and supported systems.");
++		pr_crit("Important:  In MIRACLE LINUX 8, single threaded, single CPU 64-bit physical systems are unsupported. Please contact ml-packager@miraclelinux.com for more information.");
+ 	}
+ 
+ 	/*
+diff --git a/init/main.c b/init/main.c
+index e25188e2b..529d2209a 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -571,7 +571,6 @@ asmlinkage __visible void __init start_kernel(void)
+ 	page_alloc_init();
+ 
+ 	pr_notice("Kernel command line: %s\n", boot_command_line);
+-	pr_notice("Specific versions of hardware are certified with Red Hat Enterprise Linux 8. Please see the list of hardware certified with Red Hat Enterprise Linux 8 at https://catalog.redhat.com.\n");
+ 	parse_early_param();
+ 	after_dashes = parse_args("Booting kernel",
+ 				  static_command_line, __start___param,
