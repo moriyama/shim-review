@@ -25,4 +25,4 @@ Confirm the following are included in your repo, checking each box:
 -------------------------------------------------------------------------------
 ### What is the link to your previous shim review request (if any, otherwise N/A)?
 -------------------------------------------------------------------------------
-[your text here]
+https://github.com/rhboot/shim-review/issues/189
