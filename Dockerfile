@@ -7,14 +7,13 @@ RUN dnf --enablerepo powertools \
     install -y \
     binutils gcc gnu-efi gnu-efi-devel make redhat-rpm-config rpm-build \
     yum-utils wget dos2unix elfutils-libelf-devel git openssl \
-    openssl-devel pesign
+    openssl-devel pesign wget
+RUN wget https://kojipkgs.fedoraproject.org//packages/shim-unsigned-x64/15.6/1/src/shim-unsigned-x64-15.6-1.src.rpm
+RUN rpm -ivh shim-unsigned-x64-15.6-1.src.rpm
 COPY shim-unsigned-x64.spec /root/rpmbuild/SPECS/
-COPY shim-15.6.tar.bz2 /root/rpmbuild/SOURCES/
 COPY mlsecureboot004.der /root/rpmbuild/SOURCES/
 COPY sbat.ml.csv /root/rpmbuild/SOURCES/
-COPY shim-find-debuginfo.sh /root/rpmbuild/SOURCES/
 COPY dbx.esl /root/rpmbuild/SOURCES/
-COPY shim.patches /root/rpmbuild/SOURCES/
 RUN sed -i 's/linux32 -B/linux32/g' /root/rpmbuild/SPECS/shim-unsigned-x64.spec
 RUN rpmbuild -ba /root/rpmbuild/SPECS/shim-unsigned-x64.spec --noclean --define 'dist .el8'
 RUN rpm2cpio /root/rpmbuild/RPMS/x86_64/shim-unsigned-ia32-*.x86_64.rpm | cpio -diu
