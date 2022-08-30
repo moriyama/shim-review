@@ -260,7 +260,7 @@ No.
 -------------------------------------------------------------------------------
 ### What kernel are you using? Which patches does it includes to enforce Secure Boot?
 -------------------------------------------------------------------------------
-4.18 based linux kernel that supports Secure Boot.
+We are using 4.18.0 kernel based on RHEL8 kernel that supports Secure Boot.
 
 -------------------------------------------------------------------------------
 ### Add any additional information you think we may need to validate this shim.
