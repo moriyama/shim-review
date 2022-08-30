@@ -137,7 +137,8 @@ eadb2f47a3ced5c64b23b90fd2a3463f63726066: No
 -------------------------------------------------------------------------------
 ### Do you build your signed kernel with additional local patches? What do they do?
 -------------------------------------------------------------------------------
-[your text here]
+We add one debrand patch(replacing trademarks) for compliant RED HAT TRADEMARK GUIDELINES.
+It changes a few messages of `pr_notice()` and `pr_crit()`, do nothing else.
 
 -------------------------------------------------------------------------------
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
