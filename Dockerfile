@@ -19,12 +19,18 @@ RUN rpmbuild -ba /root/rpmbuild/SPECS/shim-unsigned-x64.spec --noclean --define 
 RUN rpm2cpio /root/rpmbuild/RPMS/x86_64/shim-unsigned-ia32-*.x86_64.rpm | cpio -diu
 RUN rpm2cpio /root/rpmbuild/RPMS/x86_64/shim-unsigned-x64-*.x86_64.rpm | cpio -diu
 COPY shimx64.efi shimia32.efi /
-RUN sha256sum \
-    /usr/share/shim/*/x64/shimx64.efi /shimx64.efi \
-    /usr/share/shim/*/ia32/shimia32.efi /shimia32.efi
 RUN hexdump -Cv /usr/share/shim/*/ia32/shimia32.efi > /builtia32.hex
 RUN hexdump -Cv /shimia32.efi > /origia32.hex
 RUN hexdump -Cv /usr/share/shim/*/x64/shimx64.efi > /builtx64.hex
 RUN hexdump -Cv /shimx64.efi > /origx64.hex
 RUN diff -u /origia32.hex /builtia32.hex
 RUN diff -u /origx64.hex /builtx64.hex
+RUN objdump -h /usr/share/shim/*/ia32/shimia32.efi
+RUN objdump -h /usr/share/shim/*/x64/shimx64.efi
+RUN pesign -h -P -i /usr/share/shim/*/ia32/shimia32.efi
+RUN pesign -h -P -i /shimia32.efi
+RUN pesign -h -P -i /usr/share/shim/*/x64/shimx64.efi
+RUN pesign -h -P -i /shimx64.efi
+RUN sha256sum \
+    /usr/share/shim/*/x64/shimx64.efi /shimx64.efi \
+    /usr/share/shim/*/ia32/shimia32.efi /shimia32.efi
