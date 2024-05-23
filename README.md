@@ -50,7 +50,7 @@ You will be asked to post the contents of these mails in your `shim-review` issu
 - Position: Expert Engineer
 - Email address: masayuki.moriyama@miraclelinux.com
 - PGP key fingerprint: 7A73 3BB6 5F8C 0A03 669A  55DB F4D6 D9F6 6850 9F22
-
+https://github.com/miraclelinux/shim-review/blob/ML9-shim15.8/masayuki_moriyama_F4D6D9F668509F22.pub  
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
 well known in the Linux community.)
@@ -62,6 +62,7 @@ well known in the Linux community.)
 - Position: Senior Engineer
 - Email address: haruki.tsurumoto@miraclelinux.com
 - PGP key fingerprint: FEA2 980F F1B1 FA08 4A8D  FD4E D652 34EE E8B6 B283
+https://github.com/miraclelinux/shim-review/blob/ML9-shim15.8/haruki_tsurumoto_D65234EEE8B6B283.pub  
 
 (Key should be signed by the other security contacts, pushed to a keyserver
 like keyserver.ubuntu.com, and preferably have signatures that are reasonably
