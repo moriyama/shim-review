@@ -95,7 +95,8 @@ Hint: If you attach all the patches and modifications that are being used to you
 
 You can also point to your custom git servers, where the code is hosted.
 *******************************************************************************
-[your url here]
+shim-unsigned-x64-15.8-2.el9.src.rpm is pointed in Dockerfile.  
+https://github.com/miraclelinux/shim-review/blob/ML9-shim15.8/Dockerfile#L6  
 
 *******************************************************************************
 ### What patches are being applied and why:
