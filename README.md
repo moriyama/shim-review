@@ -202,7 +202,8 @@ Yes
 ### If you use vendor_db functionality of providing multiple certificates and/or hashes please briefly describe your certificate setup.
 ### If there are allow-listed hashes please provide exact binaries for which hashes are created via file sharing service, available in public with anonymous access for verification.
 *******************************************************************************
-We don't use vendor_db functionality in this build.
+2 certificates enrolled in vendor_db.
+vendor_db contains ml9secureboot001.der and ml9secureboot002.der, which are included in this repository.
 
 *******************************************************************************
 ### If you are re-using the CA certificate from your last shim binary, you will need to add the hashes of the previous GRUB2 binaries exposed to the CVEs mentioned earlier to vendor_dbx in shim. Please describe your strategy.
