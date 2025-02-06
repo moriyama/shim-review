@@ -1,4 +1,4 @@
-FROM almalinux:9
+FROM almalinux:9.5
 RUN dnf --enablerepo crb install -y \
         binutils gcc gnu-efi gnu-efi-devel make redhat-rpm-config rpm-build yum-utils \
         wget dos2unix elfutils-libelf-devel git openssl openssl-devel pesign
