@@ -5,6 +5,7 @@ RUN dnf --enablerepo crb install -y \
 COPY rpmmacros /root/.rpmmacros
 RUN mkdir -p /builddir/build/{SOURCES,SPECS}
 RUN wget -P /builddir/build/SOURCES https://github.com/rhboot/shim/releases/download/15.8/shim-15.8.tar.bz2
+RUN cd /builddir/build/SOURCES && echo "a79f0a9b89f3681ab384865b1a46ab3f79d88b11b4ca59aa040ab03fffae80a9  shim-15.8.tar.bz2" | sha256sum -c -
 COPY sbat.ml.csv /builddir/build/SOURCES/
 COPY vendordb.esl /builddir/build/SOURCES/
 COPY shim-find-debuginfo.sh /builddir/build/SOURCES/
